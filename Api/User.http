@@ -1,4 +1,5 @@
 @host = https://localhost:5001
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiJhYmMxMjMiLCJwZXJtaXNzaW9ucyI6WyJSZWFkVXNlciIsIk1hbmFnZVVzZXIiXSwicm9sZSI6IkN1c3RvbWVyIiwibmJmIjoxNjYwMTkzNDIyLCJleHAiOjE2NjI4NzE4MjIsImlhdCI6MTY2MDE5MzQyMn0.ojCOKJKf-5vy1gHSXdYa8kxnPpAqpaM_o7LBSKMs5RM
 
 ###
 
@@ -6,3 +7,4 @@ GET {{host}}/user
     ?firstname=Ahmad
     &lastname=Tantowi
     &age=20
+Authorization: Bearer {{authToken}}

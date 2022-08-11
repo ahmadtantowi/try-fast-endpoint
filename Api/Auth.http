@@ -1,0 +1,22 @@
+@host = https://localhost:5001
+
+###
+
+# @name login
+POST {{host}}/auth/up
+Content-Type: application/json
+
+{
+    "username": "ahmadtantowi",
+    "password": "qwerty"
+}
+
+###
+
+@authToken = {{login.response.body.$}}
+
+GET {{host}}/user
+    ?firstname=Ahmad
+    &lastname=Tantowi
+    &age=20
+Authorization: Bearer {{authToken}}

@@ -5,7 +5,8 @@ public class GetUserHandler : Endpoint<GetUserRequest, GetUserResult>
     public override void Configure()
     {
         Get("/user");
-        AllowAnonymous();
+        Permissions("ReadUser");
+        Policies(PolicyConstant.CustomerPolicy);
     }
 
     public override async Task HandleAsync(GetUserRequest req, CancellationToken ct)
