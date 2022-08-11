@@ -6,6 +6,8 @@ public class UserPasswordHandler : Endpoint<UserPasswordRequest>
     {
         Post("/auth/up");
         AllowAnonymous();
+
+        Summary(sum => sum.Summary = "Login with Username & Password");
     }
 
     public override async Task HandleAsync(UserPasswordRequest req, CancellationToken ct)

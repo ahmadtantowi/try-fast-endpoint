@@ -7,6 +7,8 @@ public class GetUserHandler : Endpoint<GetUserRequest, GetUserResult>
         Get("/user");
         Permissions("ReadUser");
         Policies(PolicyConstant.CustomerPolicy);
+
+        Summary(sum => sum.Summary = "Get User");
     }
 
     public override async Task HandleAsync(GetUserRequest req, CancellationToken ct)

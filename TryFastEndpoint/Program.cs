@@ -1,6 +1,7 @@
 ﻿global using FastEndpoints;
 global using FastEndpoints.Security;
 
+using FastEndpoints.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using TryFastEndpoint;
@@ -14,11 +15,14 @@ builder.Services.AddAuthorization(options =>
         .RequireRole(RoleConstant.Customer)
         .RequireClaim(ClaimConstant.UserId));
 });
+builder.Services.AddSwaggerDoc();
 
 var app = builder.Build();
 app.UseDefaultExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseFastEndpoints();
+app.UseOpenApi();
+app.UseSwaggerUi3(settings => settings.ConfigureDefaults());
 
 app.Run();
