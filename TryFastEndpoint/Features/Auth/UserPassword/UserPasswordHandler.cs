@@ -7,6 +7,8 @@ public class UserPasswordHandler : Endpoint<UserPasswordRequest>
         Post("/auth/up");
         AllowAnonymous();
 
+        Throttle(10, 30);
+
         Summary(sum => sum.Summary = "Login with Username & Password");
     }
 
