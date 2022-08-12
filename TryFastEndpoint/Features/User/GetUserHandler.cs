@@ -7,6 +7,7 @@ public class GetUserHandler : Endpoint<GetUserRequest, GetUserResult>
         Get("/user");
         Permissions("ReadUser");
         Policies(PolicyConstant.CustomerPolicy);
+        ResponseCache(10);
 
         Summary(sum => sum.Summary = "Get User");
     }
