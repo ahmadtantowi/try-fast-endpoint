@@ -11,6 +11,14 @@
     <PackageReference Include="FastEndpoints" Version="4.4.0" />
     <PackageReference Include="FastEndpoints.Security" Version="4.4.0" />
     <PackageReference Include="FastEndpoints.Swagger" Version="4.4.0" />
+    <PackageReference Include="FastEndpoints.Generator" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TryFastEndpoint;
 
 var builder = WebApplication.CreateBuilder();
-builder.Services.AddFastEndpoints();
+builder.Services.AddFastEndpoints(options => options.SourceGeneratorDiscoveredTypes = DiscoveredTypes.All);
 builder.Services.AddAuthenticationJWTBearer(Constant.SigningKey);
 builder.Services.AddAuthorization(options =>
 {
